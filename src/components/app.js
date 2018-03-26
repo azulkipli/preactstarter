@@ -16,12 +16,9 @@ if (module.hot) {
 const now = Date.now();
 const curYear = new Date(now).getFullYear("Y");
 
-const jsUcfirst = (string) => {
+const jsUcfirst = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-    
-
+};
 
 /** fall-back route (handles unroutable URLs) */
 const Error = ({ type, url }) => (
@@ -89,6 +86,25 @@ export default class App extends Component {
           <meta name="keywords" content="pulsa, paket data, token listrik, pln, bpjs, cicilan" />
           <meta name="description" content="bayar pulsa , beli paket data, beli token listrik, bayar listrik, bayar" />
         </Head>
+
+        <div id="wrapper">
+          {/* Header */}
+          <Header showDrawer={this.showDrawer} goTo={this.goTo} toggleModal={this.toggleModal} />
+          {/* Routers */}
+          <Router onChange={this.handleRoute}>
+            <Home path="/" />
+            <Profile path="/profile/" user="me" />
+            <Profile path="/profile/:user" />
+            <Error type="404" default />
+          </Router>
+
+          <div class="o-drawer u-highest o-drawer--bottom fullwidth o-drawer--visible">
+            <footer class="u-window-box-medium">
+              <div class="u-centered">&copy; Azul ~ {curYear} </div>
+            </footer>
+          </div>
+        </div>
+        <Drawer open={openDrawer} goTo={this.goTo} hideDrawer={this.hideDrawer} />
         <div class={clsOverlay} onClick={this.dismisOverlay} />
         {!openModal ? (
           ""
@@ -110,25 +126,6 @@ export default class App extends Component {
             </div>
           </div>
         )}
-
-        <div id="wrapper">
-          {/* Header */}
-          <Header showDrawer={this.showDrawer} goTo={this.goTo} toggleModal={this.toggleModal} />
-          {/* Routers */}
-          <Router onChange={this.handleRoute}>
-            <Home path="/" />
-            <Profile path="/profile/" user="me" />
-            <Profile path="/profile/:user" />
-            <Error type="404" default />
-          </Router>
-
-          <div class="o-drawer u-highest o-drawer--bottom fullwidth o-drawer--visible">
-            <footer class="u-window-box-medium">
-              <div class="u-centered">&copy; Azul ~ {curYear} </div>
-            </footer>
-          </div>
-        </div>
-        <Drawer open={openDrawer} goTo={this.goTo} hideDrawer={this.hideDrawer} />
       </div>
     );
   }

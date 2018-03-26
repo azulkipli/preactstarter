@@ -1,5 +1,6 @@
 import { h, Component } from "preact";
 import { Link } from "preact-router/match";
+// import logo from "../../assets/logo.svg";
 import logo from "../../assets/logo.png";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";

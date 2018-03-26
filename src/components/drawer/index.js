@@ -1,6 +1,5 @@
 import { h, Component } from "preact";
 import Router from "preact-router";
-import logo from "../../assets/logo.png";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faTimes from "@fortawesome/fontawesome-free-solid/faTimes";
 import faSignOutAlt from "@fortawesome/fontawesome-free-solid/faSignOutAlt";

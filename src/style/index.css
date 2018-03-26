@@ -53,7 +53,8 @@ body {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
-.o-drawer--left, .o-drawer--right{
+.o-drawer--left,
+.o-drawer--right {
   width: 85%;
 }
 .o-drawer--bottom.fullwidth {

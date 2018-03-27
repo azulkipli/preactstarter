@@ -21,14 +21,14 @@ export default class Header extends Component {
     this.setState({ modalOpen: !this.state.modalOpen, modalTitle: "Need Help?", modalContent: "Why do you need help" });
   };
 
-  render({}, { modalOpen, modalTitle, modalContent }) {
+  render(props, { modalOpen, modalTitle, modalContent }) {
     return (
       <div id="header">
         <header class="navbar">
           <section class="navbar-section redtext">...</section>
           <section class="navbar-center">
             <LazyLoad height={40} width={118}>
-              <img src={logo} alt="LOGO" />
+              <img src={logo} alt="LOGO" onClick={() => props.goTo("/")} />
             </LazyLoad>
           </section>
           <section class="navbar-section">

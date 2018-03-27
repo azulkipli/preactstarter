@@ -82,15 +82,22 @@ export default class App extends Component {
           <FontAwesomeIcon icon={faBars} />
         </a>
 
-        <Drawer goTo={this.goTo} />
+        <LazyLoad>
+          <Drawer goTo={this.goTo} />
+        </LazyLoad>
 
         <a class="off-canvas-overlay" href="#close" />
 
         <div class="off-canvas-content">
-          <Header />
+          <Header goTo={this.goTo} />
           <div class="container">
             <div class="columns">
-              <Home />
+              <Router onChange={this.handleRoute}>
+                <Home path="/" />
+                <Profile path="/profile/" user="me" />
+                <Profile path="/profile/:user" />
+                <Error type="404" default />
+              </Router>
             </div>
           </div>
           <footer>

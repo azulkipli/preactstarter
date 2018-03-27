@@ -31,10 +31,21 @@ body {
 }
 
 .off-canvas .off-canvas-toggle {
-  left: 0.1rem;
-  top: 0.1rem;
+  left: 0rem;
+  top: 0.08rem;
+}
+
+.redtext {
+  color: #de1d4d;
 }
 
 .menu {
   box-shadow: none;
+}
+
+.btn-trans {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
 }

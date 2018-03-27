@@ -1,6 +1,6 @@
 {
-  "name": "prdefault",
-  "short_name": "prdefault",
+  "name": "Preact Spectre",
+  "short_name": "prspectre",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

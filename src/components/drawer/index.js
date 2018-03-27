@@ -3,6 +3,7 @@ import Router from "preact-router";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faTimes from "@fortawesome/fontawesome-free-solid/faTimes";
 import faSignOutAlt from "@fortawesome/fontawesome-free-solid/faSignOutAlt";
+import LazyLoad from "react-lazyload";
 
 export default class Drawer extends Component {
   isActive = pathname => {
@@ -23,29 +24,31 @@ export default class Drawer extends Component {
           <figure class="avatar" data-initial="Az" style="background-color: #5755d9;" />
           <b> Acep Zulkipli</b>
           <div class="float-right">
-            <a class="btn btn-action" href="#close">
-              <FontAwesomeIcon icon={faTimes} />
+            <a class="btn btn-action btn36" href="#close">
+              <LazyLoad height={36} width={36}>
+                <FontAwesomeIcon icon={faTimes} />
+              </LazyLoad>
             </a>
           </div>
 
           <li class="divider" data-content="MENU" />
           <li class="menu-item">
-            <a href="#">
+            <a onClick={() => props.goTo("/profile")}>
               <i class="icon icon-people" /> My Profile
             </a>
           </li>
           <li class="menu-item">
-            <a href="#">
+            <a onClick={() => props.goTo("/faqs")}>
               <i class="icon icon-bookmark" /> FAQs
             </a>
           </li>
           <li class="menu-item">
-            <a href="#">
+            <a onClick={() => props.goTo("/terms-conditions")}>
               <i class="icon icon-flag" /> Syarat & Ketentuan
             </a>
           </li>
           <li class="menu-item">
-            <a href="#">
+            <a onClick={() => props.goTo("/privacy")}>
               <i class="icon icon-check" /> Kebijakan Privasi
             </a>
           </li>

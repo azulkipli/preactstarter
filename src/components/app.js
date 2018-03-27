@@ -1,6 +1,7 @@
 import { h, Component } from "preact";
 import { Router, route } from "preact-router";
 import Head from "preact-head";
+import LazyLoad from "react-lazyload";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 
@@ -25,8 +26,8 @@ const jsUcfirst = string => {
 
 /** fall-back route (handles unroutable URLs) */
 const Error = ({ type, url }) => (
-  <div class="u-window-box-medium">
-    <h1 class="u-large">Ups {type}</h1>
+  <div>
+    <h1>Ups {type}</h1>
     {type === "404" ? <p>URL not found.</p> : ""}
     <pre>{url}</pre>
   </div>
@@ -77,11 +78,11 @@ export default class App extends Component {
 
     return (
       <div id="app" class="off-canvas">
-        <a class="off-canvas-toggle btn btn-action" href="#sidebar-id">
+        <a class="off-canvas-toggle btn btn-action btn-trans" href="#sidebar-id">
           <FontAwesomeIcon icon={faBars} />
         </a>
 
-        <Drawer />
+        <Drawer goTo={this.goTo} />
 
         <a class="off-canvas-overlay" href="#close" />
 

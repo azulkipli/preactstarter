@@ -32,11 +32,11 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
     "@fortawesome/react-fontawesome": "0.0.18",
-    "blaze": "^4.0.0-6",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
     "preact-head": "^1.0.2",
-    "preact-router": "^2.5.7"
+    "preact-router": "^2.5.7",
+    "spectre.css": "^0.5.1"
   },
   "jest": {
     "verbose": true,

@@ -1,9 +1,12 @@
 import { h, Component } from "preact";
 import { Router, route } from "preact-router";
 import Head from "preact-head";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 
 import Header from "./header";
 import Drawer from "./drawer";
+import Clock from "./drawer";
 // import Home from "../routes/home";
 // import Profile from "../routes/profile";
 import Home from "async!../routes/home";
@@ -72,60 +75,29 @@ export default class App extends Component {
     const paths = currentUrl.split("/");
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
 
-    let clsDrawer = !openDrawer
-      ? "o-drawer u-highest o-drawer--left"
-      : "o-drawer u-highest o-drawer--left o-drawer--visible";
-
-    let clsOverlay =
-      openDrawer || openModal ? "c-overlay c-overlay--visible c-overlay--fullpage" : "c-overlay c-overlay--dismissable";
-
     return (
-      <div id="app">
-        <Head>
-          <title>Sepulsa | {curPath}</title>
-          <meta name="keywords" content="pulsa, paket data, token listrik, pln, bpjs, cicilan" />
-          <meta name="description" content="bayar pulsa , beli paket data, beli token listrik, bayar listrik, bayar" />
-        </Head>
+      <div id="app" class="off-canvas">
+        <a class="off-canvas-toggle btn btn-action" href="#sidebar-id">
+          <FontAwesomeIcon icon={faBars} />
+        </a>
 
-        <div id="wrapper">
-          {/* Header */}
-          <Header showDrawer={this.showDrawer} goTo={this.goTo} toggleModal={this.toggleModal} />
-          {/* Routers */}
-          <Router onChange={this.handleRoute}>
-            <Home path="/" />
-            <Profile path="/profile/" user="me" />
-            <Profile path="/profile/:user" />
-            <Error type="404" default />
-          </Router>
+        <Drawer />
 
-          <div class="o-drawer u-highest o-drawer--bottom fullwidth o-drawer--visible">
-            <footer class="u-window-box-medium">
-              <div class="u-centered">&copy; Azul ~ {curYear} </div>
-            </footer>
-          </div>
-        </div>
-        <Drawer open={openDrawer} goTo={this.goTo} hideDrawer={this.hideDrawer} />
-        <div class={clsOverlay} onClick={this.dismisOverlay} />
-        {!openModal ? (
-          ""
-        ) : (
-          <div class="o-modal u-highest">
-            <div class="c-card">
-              <header class="c-card__header">
-                <button type="button" class="c-button c-button--close" onClick={this.toggleModal}>
-                  &times;
-                </button>
-                <h2 class="c-heading">Help</h2>
-              </header>
-              <div class="c-card__body">Why do you need help?</div>
-              <footer class="c-card__footer">
-                <button type="button" class="c-button c-button--brand" onClick={this.toggleModal}>
-                  OK
-                </button>
-              </footer>
+        <a class="off-canvas-overlay" href="#close" />
+
+        <div class="off-canvas-content">
+          <Header />
+          <div class="container">
+            <div class="columns">
+              <Home />
             </div>
           </div>
-        )}
+          <footer>
+            <div className="container">
+              <Clock />
+            </div>
+          </footer>
+        </div>
       </div>
     );
   }

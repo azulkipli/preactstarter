@@ -1,34 +1,38 @@
 import { h, Component } from "preact";
 import { Link } from "preact-router/match";
-// import logo from "../../assets/logo.svg";
 import logo from "../../assets/logo.png";
+import Modal from "../modal";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import faQuestion from "@fortawesome/fontawesome-free-solid/faQuestion";
 
 export default class Header extends Component {
-  render(props, state) {
+  constructor() {
+    super();
+    // set initial time:
+    this.state.modalOpen = false;
+    // this.state.count = 10;
+  }
+
+  toggleModal = () => {
+    this.setState({ modalOpen: !this.state.modalOpen, modalTitle: "Need Help?", modalContent: "Why do you need help" });
+  };
+
+  render({}, { modalOpen, modalTitle, modalContent }) {
     return (
-      <div id="header" class="o-grid">
-        <div class="o-grid__cell u-center-block">
-          <div class="u-center-block__content left">
-            <a class="u-medium u-color-white" onClick={props.showDrawer}>
-              <FontAwesomeIcon icon={faBars} />
-            </a>
-          </div>
-        </div>
-        <div class="o-grid__cell u-center-block ">
-          <a class="u-centered" onClick={() => props.goTo("/")}>
-            <img src={logo} alt="logo" />
-          </a>
-        </div>
-        <div class="o-grid__cell u-center-block">
-          <div class="u-center-block__content right">
-            <a class="u-medium u-color-white" onClick={props.toggleModal}>
+      <div id="header">
+        <header class="navbar">
+          <section class="navbar-section">...</section>
+          <section class="navbar-center">
+            <img src={logo} alt="LOGO" />
+          </section>
+          <section class="navbar-section">
+            <button class="btn btn-action" onClick={this.toggleModal}>
               <FontAwesomeIcon icon={faQuestion} />
-            </a>
-          </div>
-        </div>
+            </button>
+          </section>
+        </header>
+        <Modal active={modalOpen} title={modalTitle} content={modalContent} toggleModal={this.toggleModal} />
       </div>
     );
   }

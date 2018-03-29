@@ -4,9 +4,10 @@ import Head from "preact-head";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 
-import Header from "async!./header";
-import Drawer from "async!./drawer";
-import Clock from "async!./drawer";
+import Header from "./header";
+import Drawer from "./drawer";
+import Clock from "./clock";
+import Error from "async!./error";
 // import Home from "../routes/home";
 // import Profile from "../routes/profile";
 import Home from "async!../routes/home";
@@ -22,15 +23,6 @@ const curYear = new Date(now).getFullYear("Y");
 const jsUcfirst = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
-
-/** fall-back route (handles unroutable URLs) */
-const Error = ({ type, url }) => (
-  <div>
-    <h1>Ups {type}</h1>
-    {type === "404" ? <p>URL not found.</p> : ""}
-    <pre>{url}</pre>
-  </div>
-);
 
 export default class App extends Component {
   /** Gets fired when the route changes.
@@ -74,14 +66,13 @@ export default class App extends Component {
     const currentUrl = Router.getCurrentUrl();
     const paths = currentUrl.split("/");
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
-
     return (
       <div id="app" class="off-canvas">
-        <a class="off-canvas-toggle btn btn-action btn-trans" href="#sidebar">
+        <a class="off-canvas-toggle btn btn-action btn-trans" onClick={this.showDrawer}>
           <FontAwesomeIcon icon={faBars} />
         </a>
 
-        <a class="off-canvas-overlay" href="#close" />
+        <a class="off-canvas-overlay" onClick={this.hideDrawer} />
 
         <div class="off-canvas-content">
           <Header goTo={this.goTo} />
@@ -95,14 +86,14 @@ export default class App extends Component {
               </Router>
             </div>
           </div>
-          <footer>
-            <div className="container">
+          <footer class="container">
+            <div class="footertext" className="p4">
               <Clock />
             </div>
           </footer>
         </div>
 
-        <Drawer goTo={this.goTo} />
+        <Drawer goTo={this.goTo} hideDrawer={this.hideDrawer} active={openDrawer} />
       </div>
     );
   }

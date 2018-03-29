@@ -49,3 +49,10 @@ body {
   color: #fff;
   font-size: 0.9rem;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}

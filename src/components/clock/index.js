@@ -1,5 +1,5 @@
 import { Component } from "preact";
-class Clock extends Component {
+export default class Clock extends Component {
   constructor() {
     super();
     // set initial time:

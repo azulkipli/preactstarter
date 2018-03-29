@@ -1,13 +1,15 @@
 import criticalCssPlugin from "preact-cli-plugin-critical-css";
 // import Jarvis from "webpack-jarvis";
 /* the rest of your webpack configs */
-const preactCliSwPrecachePlugin = require("preact-cli-sw-precache");
+// const preactCliSwPrecachePlugin = require("preact-cli-sw-precache");
 
 export default (config, env) => {
-  // const options = {
-  //   // Passed directly to the 'critical' module (this is optional)
-  // };
-  console.log("config", config);
+  const options = {
+    width: 360,
+    height: 640
+  };
+  // console.log("CONFIG", JSON.stringify(config));
+  // console.log("ENV", JSON.stringify(env));
   criticalCssPlugin(config, env, options);
 
   // const precacheConfig = {

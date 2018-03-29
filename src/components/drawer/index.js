@@ -17,20 +17,21 @@ export default class Drawer extends Component {
     }
   };
   render(props, {}) {
+    const clsSidebar = props.active ? "off-canvas-sidebar active" : "off-canvas-sidebar";
     return (
-      <div id="sidebar" class="off-canvas-sidebar">
+      <div id="sidebar" class={clsSidebar}>
         <ul className="menu">
           <figure class="avatar" data-initial="Az" style="background-color: #5755d9;" />
           <b> Acep Zulkipli</b>
           <div class="float-right">
-            <a class="btn btn-link-dark" href="#close" style={{ marginTop: "-0.5rem" }}>
+            <a class="btn btn-link-dark" onClick={props.hideDrawer} style={{ marginTop: "-0.5rem" }}>
               <FontAwesomeIcon icon={faTimes} />
             </a>
           </div>
 
           <li class="divider" data-content="MENU" />
           <li class="menu-item">
-            <a onClick={() => props.goTo("/profile")}>
+            <a onClick={() => props.goTo("/profile/azul")}>
               <i class="icon icon-people" /> My Profile
             </a>
           </li>

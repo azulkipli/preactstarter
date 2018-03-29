@@ -7,7 +7,6 @@ import Modal from "../modal";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import faQuestion from "@fortawesome/fontawesome-free-solid/faQuestion";
-import LazyLoad from "react-lazyload";
 
 export default class Header extends Component {
   constructor() {
@@ -27,9 +26,7 @@ export default class Header extends Component {
         <header class="navbar">
           <section class="navbar-section redtext">...</section>
           <section class="navbar-center">
-            <LazyLoad height={40} width={118}>
-              <img src={logo} alt="LOGO" onClick={() => props.goTo("/")} />
-            </LazyLoad>
+            <img src={logo} alt="LOGO" onClick={() => props.goTo("/")} />
           </section>
           <section class="navbar-section">
             <button class="btn btn-action btn-trans" onClick={this.toggleModal}>

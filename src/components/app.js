@@ -1,13 +1,12 @@
 import { h, Component } from "preact";
 import { Router, route } from "preact-router";
 import Head from "preact-head";
-import LazyLoad from "react-lazyload";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 
-import Header from "./header";
-import Drawer from "./drawer";
-import Clock from "./drawer";
+import Header from "async!./header";
+import Drawer from "async!./drawer";
+import Clock from "async!./drawer";
 // import Home from "../routes/home";
 // import Profile from "../routes/profile";
 import Home from "async!../routes/home";
@@ -78,13 +77,9 @@ export default class App extends Component {
 
     return (
       <div id="app" class="off-canvas">
-        <a class="off-canvas-toggle btn btn-action btn-trans" href="#sidebar-id">
+        <a class="off-canvas-toggle btn btn-action btn-trans" href="#sidebar">
           <FontAwesomeIcon icon={faBars} />
         </a>
-
-        <LazyLoad>
-          <Drawer goTo={this.goTo} />
-        </LazyLoad>
 
         <a class="off-canvas-overlay" href="#close" />
 
@@ -106,6 +101,8 @@ export default class App extends Component {
             </div>
           </footer>
         </div>
+
+        <Drawer goTo={this.goTo} />
       </div>
     );
   }

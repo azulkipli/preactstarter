@@ -3,7 +3,6 @@ import Router from "preact-router";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faTimes from "@fortawesome/fontawesome-free-solid/faTimes";
 import faSignOutAlt from "@fortawesome/fontawesome-free-solid/faSignOutAlt";
-import LazyLoad from "react-lazyload";
 
 export default class Drawer extends Component {
   isActive = pathname => {
@@ -19,15 +18,13 @@ export default class Drawer extends Component {
   };
   render(props, {}) {
     return (
-      <div id="sidebar-id" class="off-canvas-sidebar">
+      <div id="sidebar" class="off-canvas-sidebar">
         <ul className="menu">
           <figure class="avatar" data-initial="Az" style="background-color: #5755d9;" />
           <b> Acep Zulkipli</b>
           <div class="float-right">
-            <a class="btn btn-action btn36" href="#close">
-              <LazyLoad height={36} width={36}>
-                <FontAwesomeIcon icon={faTimes} />
-              </LazyLoad>
+            <a class="btn btn-link-dark" href="#close" style={{ marginTop: "-0.5rem" }}>
+              <FontAwesomeIcon icon={faTimes} />
             </a>
           </div>
 

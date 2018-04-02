@@ -7,11 +7,11 @@ import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import Header from "./header";
 import Drawer from "./drawer";
 import Clock from "./clock";
-import Error from "async!./error";
-// import Home from "../routes/home";
-// import Profile from "../routes/profile";
-import Home from "async!../routes/home";
-import Profile from "async!../routes/profile";
+import Error from "./error";
+import Home from "../routes/home";
+import Profile from "../routes/profile";
+// import Home from "async!../routes/home";
+// import Profile from "async!../routes/profile";
 
 if (module.hot) {
   require("preact/debug");
@@ -68,9 +68,9 @@ export default class App extends Component {
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
     return (
       <div id="app" class="off-canvas">
-        <a class="off-canvas-toggle btn btn-action btn-trans" onClick={this.showDrawer}>
+        <button class="off-canvas-toggle btn btn-action btn-trans" role="button" onClick={this.showDrawer}>
           <FontAwesomeIcon icon={faBars} />
-        </a>
+        </button>
 
         <a class="off-canvas-overlay" onClick={this.hideDrawer} />
 
@@ -87,7 +87,7 @@ export default class App extends Component {
             </div>
           </div>
           <footer class="container">
-            <div class="footertext" className="p4">
+            <div class="footertext">
               <Clock />
             </div>
           </footer>

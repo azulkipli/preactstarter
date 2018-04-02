@@ -20,6 +20,6 @@ export default class Clock extends Component {
 
   render(props, state) {
     let time = new Date(state.time).toLocaleTimeString();
-    return <div class="text-center">Made by Azul | {time}</div>;
+    return <div class="text-center">azul@sepulsa.com | {time}</div>;
   }
 }

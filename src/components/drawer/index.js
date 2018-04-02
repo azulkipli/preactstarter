@@ -21,15 +21,17 @@ export default class Drawer extends Component {
     return (
       <div id="sidebar" class={clsSidebar}>
         <ul className="menu">
-          <figure class="avatar" data-initial="Az" style="background-color: #5755d9;" />
-          <b> Acep Zulkipli</b>
-          <div class="float-right">
-            <a class="btn btn-link-dark" onClick={props.hideDrawer} style={{ marginTop: "-0.5rem" }}>
-              <FontAwesomeIcon icon={faTimes} />
-            </a>
-          </div>
+          <li>
+            <figure class="avatar" data-initial="Az" style="background-color: #5755d9;" />
+            <b> Acep Zulkipli</b>
+            <div class="float-right">
+              <a class="btn btn-link-dark" onClick={props.hideDrawer} style={{ marginTop: "-0.5rem" }}>
+                <FontAwesomeIcon icon={faTimes} />
+              </a>
+            </div>
+          </li>
 
-          <li class="divider" data-content="MENU" />
+          <li class="divider" />
           <li class="menu-item">
             <a onClick={() => props.goTo("/profile/azul")}>
               <i class="icon icon-people" /> My Profile

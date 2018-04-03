@@ -4,36 +4,43 @@ import Head from "preact-head";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 
+// Unistore
+import { connect } from "unistore/preact";
+import actions from "../store/actions";
+// Unistore
+
+// Components
 import Header from "./header";
 import Drawer from "./drawer";
 import Clock from "./clock";
 import Error from "./error";
-import Home from "../routes/home";
-import Profile from "../routes/profile";
-// import Home from "async!../routes/home";
-// import Profile from "async!../routes/profile";
+import Modal from "./modal";
+// import Home from "../routes/home";
+// import Profile from "../routes/profile";
+import Home from "async!../routes/home";
+import Profile from "async!../routes/profile";
+// Components
 
+// Hotreload
 if (module.hot) {
   require("preact/debug");
 }
+// Hotreload
 
+// Utils
 const now = Date.now();
 const curYear = new Date(now).getFullYear("Y");
 
 const jsUcfirst = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
+// Utils
 
-export default class App extends Component {
+class App extends Component {
   /** Gets fired when the route changes.
    *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
    *	@param {string} event.url	The newly routed URL
    */
-
-  state = {
-    openDrawer: false,
-    openModal: false
-  };
 
   handleRoute = e => {
     this.currentUrl = e.url;
@@ -58,21 +65,23 @@ export default class App extends Component {
     }
   };
 
-  toggleModal = () => {
-    this.setState({ openModal: !this.state.openModal });
+  openModal = (title, content) => {
+    console.log("title", title);
+    console.log("content", content);
   };
 
-  render(props, { openDrawer, openModal }) {
+  render(props, {}) {
+    // console.log("App props", props);
     const currentUrl = Router.getCurrentUrl();
     const paths = currentUrl.split("/");
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
     return (
       <div id="app" class="off-canvas">
-        <button class="off-canvas-toggle btn btn-action btn-trans" role="button" onClick={this.showDrawer}>
+        <button class="off-canvas-toggle btn btn-action btn-trans" role="button" onClick={props.showDrawer}>
           <FontAwesomeIcon icon={faBars} />
         </button>
 
-        <a class="off-canvas-overlay" onClick={this.hideDrawer} />
+        <a class="off-canvas-overlay" onClick={props.hideDrawer} />
 
         <div class="off-canvas-content">
           <Header goTo={this.goTo} />
@@ -92,9 +101,12 @@ export default class App extends Component {
             </div>
           </footer>
         </div>
-
-        <Drawer goTo={this.goTo} hideDrawer={this.hideDrawer} active={openDrawer} />
+        <Modal openModal={() => this.openModal("test title", "test content nya apa")} />
+        <Drawer goTo={this.goTo} hideDrawer={props.hideDrawer} active={props.drawerActive} />
       </div>
     );
   }
 }
+
+// export default App;
+export default connect("count, login, modalActive, modalTitle, modalContent, drawerActive", actions)(App);

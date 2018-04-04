@@ -9,12 +9,6 @@ let actions = store => ({
     return { count: count + 1 };
   },
 
-  // Async actions can be pure async/promise functions:
-  async getStuff(state) {
-    let res = await fetch("/foo.json");
-    return { stuff: await res.json() };
-  },
-
   // ... or just actions that call store.setState() later:
   incrementAsync(state) {
     setTimeout(() => {

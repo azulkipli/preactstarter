@@ -5,7 +5,7 @@ $version: "0.5.1";
 $rtl: false !default;
 
 // Core colors
-$primary-color: #5755d9 !default;
+$primary-color: #cc0435 !default;
 $primary-color-dark: darken($primary-color, 3%) !default;
 $primary-color-light: lighten($primary-color, 3%) !default;
 $secondary-color: lighten($primary-color, 37.5%) !default;
@@ -14,6 +14,8 @@ $secondary-color-light: lighten($secondary-color, 3%) !default;
 
 // Gray colors
 $dark-color: #454d5d !default;
+$light-dark-color: #565e6e !default;
+$lighter-dark-color: #898e9e !default;
 $light-color: #fff !default;
 $gray-color: lighten($dark-color, 40%) !default;
 $gray-color-dark: darken($gray-color, 25%) !default;

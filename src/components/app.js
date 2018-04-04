@@ -27,10 +27,6 @@ if (module.hot) {
 }
 // Hotreload
 
-// Utils
-const now = Date.now();
-const curYear = new Date(now).getFullYear("Y");
-
 const jsUcfirst = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
@@ -41,21 +37,8 @@ class App extends Component {
    *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
    *	@param {string} event.url	The newly routed URL
    */
-
   handleRoute = e => {
     this.currentUrl = e.url;
-  };
-
-  showDrawer = () => {
-    this.setState({ openDrawer: !this.state.openDrawer });
-  };
-
-  hideDrawer = () => {
-    this.setState({ openDrawer: false });
-  };
-
-  dismisOverlay = () => {
-    this.setState({ openDrawer: false, openModal: false });
   };
 
   goTo = pathname => {
@@ -72,7 +55,7 @@ class App extends Component {
     const curPath = paths[1] === "" ? "Home" : jsUcfirst(paths[1]);
     return (
       <div id="app" class="off-canvas">
-        <button class="off-canvas-toggle btn btn-action btn-trans" role="button" onClick={props.showDrawer}>
+        <button class="off-canvas-toggle btn btn-action btn-trans" role="button" onClick={props.toggleDrawer}>
           <FontAwesomeIcon icon={faBars} />
         </button>
 
@@ -80,15 +63,13 @@ class App extends Component {
 
         <div class="off-canvas-content">
           <Header goTo={this.goTo} showModal={props.showModal} />
-          <div class="container">
-            <div class="columns">
-              <Router onChange={this.handleRoute}>
-                <Home path="/" />
-                <Profile path="/profile/" user="me" />
-                <Profile path="/profile/:user" />
-                <Error type="404" default />
-              </Router>
-            </div>
+          <div class="container grid-md">
+            <Router onChange={this.handleRoute}>
+              <Home path="/" />
+              <Profile path="/profile/" user="me" />
+              <Profile path="/profile/:user" />
+              <Error type="404" default />
+            </Router>
           </div>
           <footer class="container">
             <div class="footertext">

@@ -98,7 +98,7 @@
   &.btn-link-dark {
     background: transparent;
     border-color: transparent;
-    color: $dark-color;
+    color: $light-dark-color;
     &:focus,
     &:hover,
     &:active,
@@ -124,6 +124,31 @@
   &.btn-block {
     display: block;
     width: 100%;
+  }
+
+  &.btn-blockauto {
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: auto;
+    border-color: $light-dark-color;
+    color: $light-dark-color;
+    padding: 0.2rem;
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      color: $lighter-dark-color;
+      box-shadow: 0 0 0 0.05rem rgba(122, 122, 138, 0.2);
+    }
+  }
+
+  &.btn-noborder {
+    border: none;
+  }
+
+  &.btn-transparent {
+    background-color: transparent;
   }
 
   // Button Action

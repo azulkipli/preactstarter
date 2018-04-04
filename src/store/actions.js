@@ -2,14 +2,6 @@ import createStore from "unistore";
 
 // If actions is a function, it gets passed the store:
 let actions = store => ({
-  // Actions can just return a state update:
-  increment(state) {
-    return { count: state.count + 1 };
-  },
-
-  // The above example as an Arrow Function:
-  increment2: ({ count }) => ({ count: count + 1 }),
-
   //Actions receive current state as first parameter and any other params next
   //check this function as <button onClick={incrementAndLog}>
   incrementAndLog: ({ count }, args) => {
@@ -50,7 +42,7 @@ let actions = store => ({
     return { modalActive: false };
   },
 
-  toggleDrawer(state) {
+  toggleDrawer: state => {
     return { drawerActive: !state.drawerActive };
   },
 

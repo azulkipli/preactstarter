@@ -22,6 +22,7 @@ export default class Header extends Component {
               height={40}
               width={118}
               delayTime={100}
+              src={logo}
               onClick={() => props.goTo("/")}
             />
           </section>

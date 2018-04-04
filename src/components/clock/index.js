@@ -1,9 +1,12 @@
 import { Component } from "preact";
+
 export default class Clock extends Component {
   constructor() {
     super();
     // set initial time:
     this.state.time = Date.now();
+
+    this.state.year = new Date(Date.now()).getFullYear("Y");
   }
 
   componentDidMount() {
@@ -19,7 +22,7 @@ export default class Clock extends Component {
   }
 
   render(props, state) {
-    let time = new Date(state.time).toLocaleTimeString();
-    return <div class="text-center">azul@sepulsa.com | {time}</div>;
+    let time = new Date(state.time).toLocaleTimeString("id");
+    return <div class="text-center">azul@sepulsa.com | &copy; {state.year}</div>;
   }
 }

@@ -5,7 +5,7 @@ import "./style";
 
 import App from "./components/app";
 import { createStore, Provider } from "unistore/full/preact";
-// import devtools from "unistore/devtools";
+import devtools from "unistore/devtools";
 import initState from "./store/initState";
 
 // adds memory backing to a unistore store instance:
@@ -16,8 +16,7 @@ function addMemory(store) {
   });
 }
 
-// let store = process.env.NODE_ENV === "production" ? createStore(initState) : devtools(createStore(initState));
-let store = createStore(initState);
+let store = process.env.NODE_ENV === "production" ? createStore(initState) : devtools(createStore(initState));
 addMemory(store);
 
 export default () => (

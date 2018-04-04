@@ -12,12 +12,12 @@ class Home extends Component {
         <p>This is the Home component.</p>
 
         <p>
-          <button class="btn" onClick={() => props.incrementAndLog({}, "args")}>
+          <button class="btn" onClick={() => props.incrementAndLog("first argument here")}>
             Click {props.count}
           </button>
         </p>
         <p>
-          <button class="btn" onClick={props.toggleModal}>
+          <button class="btn" onClick={() => props.showModal("Modal Home", "Ini isi modal box dari home component")}>
             Open Modal
           </button>
         </p>

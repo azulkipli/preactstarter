@@ -10,14 +10,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default class Header extends Component {
-  constructor() {
-    super();
-    // set initial time:
-    this.state.modalOpen = false;
-    // this.state.count = 10;
-  }
-
-  render(props, { modalOpen, modalTitle, modalContent }) {
+  render(props, {}) {
     return (
       <div id="header">
         <header class="navbar">
@@ -29,12 +22,11 @@ export default class Header extends Component {
               height={40}
               width={118}
               delayTime={100}
-              src={logo}
               onClick={() => props.goTo("/")}
             />
           </section>
           <section class="navbar-section">
-            <button class="btn btn-action btn-trans" role="button" onClick={this.toggleModal}>
+            <button class="btn btn-action btn-trans" role="button" onClick={() => props.showModal()}>
               <FontAwesomeIcon icon={faQuestion} />
             </button>
           </section>

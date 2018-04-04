@@ -65,11 +65,6 @@ class App extends Component {
     }
   };
 
-  openModal = (title, content) => {
-    console.log("title", title);
-    console.log("content", content);
-  };
-
   render(props, {}) {
     // console.log("App props", props);
     const currentUrl = Router.getCurrentUrl();
@@ -84,7 +79,7 @@ class App extends Component {
         <a class="off-canvas-overlay" onClick={props.hideDrawer} />
 
         <div class="off-canvas-content">
-          <Header goTo={this.goTo} />
+          <Header goTo={this.goTo} showModal={props.showModal} />
           <div class="container">
             <div class="columns">
               <Router onChange={this.handleRoute}>
@@ -101,7 +96,7 @@ class App extends Component {
             </div>
           </footer>
         </div>
-        <Modal openModal={() => this.openModal("test title", "test content nya apa")} />
+        <Modal />
         <Drawer goTo={this.goTo} hideDrawer={props.hideDrawer} active={props.drawerActive} />
       </div>
     );

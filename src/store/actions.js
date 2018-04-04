@@ -12,8 +12,8 @@ let actions = store => ({
 
   //Actions receive current state as first parameter and any other params next
   //check this function as <button onClick={incrementAndLog}>
-  incrementAndLog: ({ count }, { apalah }) => {
-    console.info("incrementAndLog apalah: ", apalah);
+  incrementAndLog: ({ count }, args) => {
+    console.info("incrementAndLog apalah: ", args);
     return { count: count + 1 };
   },
 
@@ -35,12 +35,19 @@ let actions = store => ({
     return { login: true };
   },
 
-  toggleModal: (state, event) => {
-    console.log("toggleModal state: ", state);
-    console.log("toggleModal event: ", event);
-    // console.log("content", content);
-    return { modalActive: !state.modalActive, modalTitle: state.modalTitle, modalContent: state.modalContent };
-    // return { modalActive: !state.modalActive };
+  showModal: (state, title = "", content = "") => {
+    // console.log("toggleModal state: ", state);
+    // console.log("toggleModal title: ", title);
+    // console.log("toggleModal content:", content);
+    if (title !== "" || content !== "") {
+      return { modalActive: true, modalTitle: title, modalContent: content };
+    } else {
+      return { modalActive: true };
+    }
+  },
+
+  hideModal: () => {
+    return { modalActive: false };
   },
 
   toggleDrawer(state) {

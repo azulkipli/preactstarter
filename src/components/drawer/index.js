@@ -22,7 +22,7 @@ export default class Drawer extends Component {
       <div id="sidebar" class={clsSidebar}>
         <ul className="menu">
           <li>
-            <figure class="avatar" data-initial="Az" style="background-color: #5755d9;" />
+            <figure class="avatar" data-initial="Az" style="background-color: #767676;" />
             <b> Acep Zulkipli</b>
             <div class="float-right">
               <a class="btn btn-link-dark" onClick={props.hideDrawer} style={{ marginTop: "-0.5rem" }}>

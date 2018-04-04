@@ -43,8 +43,8 @@ class App extends Component {
 
   goTo = pathname => {
     route(pathname);
-    if (this.state.openDrawer) {
-      this.hideDrawer();
+    if (this.props.drawerActive) {
+      this.props.hideDrawer();
     }
   };
 

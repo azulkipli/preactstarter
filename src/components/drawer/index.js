@@ -33,39 +33,30 @@ export default class Drawer extends Component {
 
           <li class="divider" />
           <li class="menu-item">
-            <a onClick={() => props.goTo("/profile/azul")}>
-              <i class="icon icon-people" /> My Profile
-            </a>
+            <a onClick={() => props.goTo("/")}>Home</a>
           </li>
           <li class="menu-item">
-            <a onClick={() => props.goTo("/faqs")}>
-              <i class="icon icon-bookmark" /> FAQs
-            </a>
+            <a onClick={() => props.goTo("/profile/azul")}>My Profile</a>
           </li>
           <li class="menu-item">
-            <a onClick={() => props.goTo("/terms-conditions")}>
-              <i class="icon icon-flag" /> Syarat & Ketentuan
-            </a>
+            <a onClick={() => props.goTo("/faqs")}>FAQs</a>
           </li>
           <li class="menu-item">
-            <a onClick={() => props.goTo("/privacy")}>
-              <i class="icon icon-check" /> Kebijakan Privasi
-            </a>
+            <a onClick={() => props.goTo("/terms-conditions")}>Syarat & Ketentuan</a>
+          </li>
+          <li class="menu-item">
+            <a onClick={() => props.goTo("/privacy")}>Kebijakan Privasi</a>
           </li>
           <li class="divider" />
           <li class="menu-item">
             <div class="menu-badge">
               <label class="label label-primary">2</label>
             </div>
-            <a href="#">
-              <i class="icon icon-time" /> History Transaksi
-            </a>
+            <a href="#">History Transaksi</a>
           </li>
           <li class="divider" />
           <li class="menu-item">
-            <a href="#">
-              <i class="icon icon-shutdown" /> Logout
-            </a>
+            <a href="#">Logout</a>
           </li>
         </ul>
       </div>

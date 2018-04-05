@@ -1,4 +1,6 @@
 import { h, Component } from "preact";
+import { route } from "preact-router";
+
 // Unistore
 import { connect } from "unistore/preact";
 import actions from "../../store/actions";
@@ -23,11 +25,8 @@ class Home extends Component {
 
         <div class="columns text-center my-6">
           <div class="column col-xs-4">
-            <button
-              class="btn btn-blockauto btn-noborder btn-transparent"
-              onClick={() => props.incrementAndLog("first argument here")}
-            >
-              <FontAwesomeIcon icon={faAddressBook} style={{ fontSize: "1.7em" }} /> <br /> counter: {props.count}
+            <button class="btn btn-blockauto btn-noborder btn-transparent" onClick={() => route("/profile")}>
+              <FontAwesomeIcon icon={faAddressBook} style={{ fontSize: "1.7em" }} /> <br /> Profile
             </button>
           </div>
           <div class="column col-xs-4">

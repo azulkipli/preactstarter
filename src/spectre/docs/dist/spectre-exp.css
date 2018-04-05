@@ -211,7 +211,7 @@
   background: #f0f1f4;
   border: 0;
   border-radius: .1rem;
-  color: #5755d9;
+  color: #cc0435;
   height: .2rem;
   position: relative;
   width: 100%;
@@ -223,18 +223,18 @@
 }
 
 .progress::-webkit-progress-value {
-  background: #5755d9;
+  background: #cc0435;
   border-radius: .1rem;
 }
 
 .progress::-moz-progress-bar {
-  background: #5755d9;
+  background: #cc0435;
   border-radius: .1rem;
 }
 
 .progress:indeterminate {
   animation: progress-indeterminate 1.5s linear infinite;
-  background: #f0f1f4 linear-gradient(to right, #5755d9 30%, #f0f1f4 30%) top left/150% 150% no-repeat;
+  background: #f0f1f4 linear-gradient(to right, #cc0435 30%, #f0f1f4 30%) top left/150% 150% no-repeat;
 }
 
 .progress:indeterminate::-moz-progress-bar {

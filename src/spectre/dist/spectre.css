@@ -685,7 +685,7 @@ dl dd {
 .btn.btn-blockauto:hover,
 .btn.btn-blockauto:active,
 .btn.btn-blockauto.active {
-  box-shadow: 0 0 0 .05rem rgba(122, 122, 138, .2); 
+  box-shadow: none; 
   color: #898e9e;
 }
 

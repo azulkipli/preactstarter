@@ -1,5 +1,5 @@
 import criticalCssPlugin from "preact-cli-plugin-critical-css";
-// import asyncPlugin from "preact-cli-plugin-async";
+import asyncPlugin from "preact-cli-plugin-fast-async";
 
 // import Jarvis from "webpack-jarvis";
 /* the rest of your webpack configs */
@@ -13,7 +13,7 @@ export default (config, env, helpers) => {
   // console.log("CONFIG", JSON.stringify(config));
   // console.log("ENV", JSON.stringify(env));
 
-  // asyncPlugin(config);
+  asyncPlugin(config);
   criticalCssPlugin(config, env, options);
 
   // const precacheConfig = {

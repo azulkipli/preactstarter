@@ -26,6 +26,7 @@
     "preact-cli": "^2.1.0",
     "preact-cli-plugin-async": "^1.0.0",
     "preact-cli-plugin-critical-css": "^0.1.0",
+    "preact-cli-plugin-fast-async": "^1.0.1",
     "preact-cli-sw-precache": "^1.0.3",
     "preact-render-spy": "^1.2.1"
   },

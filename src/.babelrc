@@ -1,12 +1,9 @@
 {
-  "plugins": [
-    "transform-regenerator",
+  "presets": [
     [
-      "transform-runtime",
+      "preact-cli/babel",
       {
-        "helpers": false,
-        "polyfill": false,
-        "regenerator": true
+        "modules": "commonjs"
       }
     ]
   ]

@@ -32,9 +32,9 @@ class Home extends Component {
           <div class="column col-xs-4">
             <button
               class="btn btn-blockauto btn-noborder btn-transparent"
-              onClick={() => props.showModal("Modal Home", "Ini isi modal box dari home component")}
+              onClick={() => props.showModal("Modal 1", "Ini isi modal box 1 dari home component")}
             >
-              <FontAwesomeIcon icon={faAmbulance} style={{ fontSize: "1.7em" }} /> <br /> Open Modal
+              <FontAwesomeIcon icon={faAmbulance} style={{ fontSize: "1.7em" }} /> <br /> Open Modal 1
             </button>
           </div>
           <div class="column col-xs-4">

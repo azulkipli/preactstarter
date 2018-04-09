@@ -1,6 +1,7 @@
 # Preact PWA Starter
 
 Preact starter template with light CSS framework, FontAwesome SVG, light state management (unistore).
+Update test
 
 ## Features
 

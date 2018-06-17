@@ -46,13 +46,13 @@ export default class App extends Component {
 			
 				<OffCanvas width={300} transitionDuration={300} isMenuOpened={isMenuOpened} position={"left"}>
 					<OffCanvasBody style={isMenuOpened ? overlayBody : regularBody}>
-						<p><a role="button" onClick={this.handleClick}>{isMenuOpened ? '✕' : '☰'}</a></p>
-						<div id="main" class="col-md-12 minHeight30" onClick={this.handleClick}>
+						<p><a onClick={this.handleClick}>{isMenuOpened ? '✕' : '☰'}</a></p>
+						<div id="main" class="col-md-12 minHeight" onClick={this.handleClick}>
 							<p>This is the main body container.</p>						
 						</div>
 					</OffCanvasBody>
 					<OffCanvasMenu>
-						<div id="sidebar" class="minHeight30" onClick={this.handleClick}>
+						<div id="sidebar" class="minHeight" onClick={this.handleClick}>
 							<p>Menu</p>
 							<nav class="side">
 								<a href="#" onClick={this.handleClick}>Category 1</a>

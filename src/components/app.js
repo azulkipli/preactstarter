@@ -44,9 +44,14 @@ export default class App extends Component {
 					<meta name="author" content="Azul" />
 				</Head>
 			
-				<OffCanvas width={300} transitionDuration={300} isMenuOpened={isMenuOpened} position={"left"}>
+				<OffCanvas width={280} transitionDuration={300} isMenuOpened={isMenuOpened} position={"left"}>
 					<OffCanvasBody style={isMenuOpened ? overlayBody : regularBody}>
-						<p><a onClick={this.handleClick}>{isMenuOpened ? '✕' : '☰'}</a></p>
+						<header>
+
+							<button  onClick={this.handleClick}>{isMenuOpened ? '✕' : '☰'}</button>
+							<a class="logo">LOGO</a>
+							
+						</header>
 						<div id="main" class="col-md-12 minHeight" onClick={this.handleClick}>
 							<p>This is the main body container.</p>						
 						</div>

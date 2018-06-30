@@ -9,6 +9,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Chengho PWA">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2d92d9">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= htmlWebpackPlugin.files.publicPath %>icons/apple-touch-icon.png">
+    <!--     
+    <link rel="apple-touch-startup-image" href="<%= htmlWebpackPlugin.files.publicPath %>assets/apple/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="<%= htmlWebpackPlugin.files.publicPath %>assets/apple/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="<%= htmlWebpackPlugin.files.publicPath %>assets/apple/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="<%= htmlWebpackPlugin.files.publicPath %>assets/apple/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="<%= htmlWebpackPlugin.files.publicPath %>assets/apple/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="<%= htmlWebpackPlugin.files.publicPath %>assets/apple/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="<%= htmlWebpackPlugin.files.publicPath %>assets/apple/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"> 
+    -->
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
 
     <% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
@@ -27,14 +39,53 @@
             <% } %>
         <% } %>
     <% } %>
+    <style type="text/css">
+        html,
+        body {
+        height: 100%;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        /* anti aliasing jika diperlukan */
 
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        margin:0;
+        }
+        #app_preload {
+            width: 100%;
+            height: 100%;
+        }
+        .homepage-archie {
+            position: relative;
+            max-width: 480px;
+            margin: 0 auto;
+            height: 100vh;
+            background: #f3f3f3;
+            -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
+            -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
+          }
+          .homepage-archie.splash {
+            background: #2d92d9;
+          }
+          .homepage-archie.splash img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+    </style>
+    <link rel="preload" href="/assets/css/mini-default.min.css" as="style" onload="this.rel='stylesheet'" media="(min-width: 20em)">
 </head>
 
 <body>
     <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
-    <link rel="preload" href="/mini-default.min.css" as="style" onload="this.rel='stylesheet'" media="(min-width: 20em)">
 
     <%= htmlWebpackPlugin.options.ssr({
 			url: '/'
@@ -45,6 +96,18 @@
                 '<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
         </script>
 
+        <div id="app_preload">
+            <div class="app-container">
+                <div class="page">
+                    <div class="homepage-archie splash">
+                        <div class="container">
+                            <!-- <img src="assets/img/img_splash.png" alt="Welcome to archie mobile site"> -->
+                            <img src="assets/loading_2.svg" alt="Welcome to archie mobile site">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

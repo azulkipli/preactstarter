@@ -1,0 +1,62 @@
+<svg class="ldi-fdufza" width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><!--?xml version="1.0" encoding="utf-8"?--><!--Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)--><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="transform-origin: 50px 50px 0px;" xml:space="preserve"><g style="transform-origin: 50px 50px 0px;"><g fill="#262323" style="fill: rgb(38, 35, 35); transform-origin: 50px 50px 0px; transform: scale(0.6);"><g style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -2.1s; animation-direction: normal;" class=""><g fill="#262323" style="fill: rgb(38, 35, 35);"><style type="text/css" class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -2.1s; animation-direction: normal;">.st0{fill:#000101;} .st1{fill:#1E1E1E;} .st2{fill:#FFFFFF;} .st3{fill:#1D1C1D;} .st4{fill:#FEFFFF;} .st5{fill:#030404;} .st6{fill:#0A0A09;}</style><g class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -1.925s; animation-direction: normal;"><path class="st0" d="M18.234,45.11l5.9,5.625l18.66,17.135l8-7.635c0.7-0.99,0.65-2.35-0.15-3.285l-7.345-6.34l0.03-0.015l-7.9-7.55 c-0.93-1.05-0.9-2.6,0.07-3.6l21.3-20.25L47.149,10l-28.9,27.46c-2.215,2.11-2.215,5.535,0,7.65H18.234z" fill="#fefefe" style="fill: rgb(254, 254, 254);"></path></g><g class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -1.75s; animation-direction: normal;"><path class="st0" d="M81.759,54.9l-5.9-5.64l-18.65-17.135l-8.04,7.635c-0.735,1-0.685,2.35,0.15,3.285l7.35,6.3h-0.02l7.9,7.55 c0.9,1.05,0.9,2.55-0.1,3.55l-21.3,20.25l9.7,9.305l28.9-27.46c2.215-2.11,2.22-5.53,0-7.65L81.759,54.9z" fill="#fefefe" style="fill: rgb(254, 254, 254);"></path></g><metadata xmlns:d="https://loading.io/stock/" class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -1.575s; animation-direction: normal;">
+<d:name class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -1.4s; animation-direction: normal;">sitepoint</d:name>
+<d:tags class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -1.225s; animation-direction: normal;">sitepoint,brand wb</d:tags>
+<d:license class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -1.05s; animation-direction: normal;">cc0</d:license>
+<d:slug class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -0.875s; animation-direction: normal;">fdufza</d:slug>
+</metadata></g></g></g></g><style type="text/css" class="ld ld-heartbeat" style="transform-origin: 50px 50px 0px; animation-duration: 2.1s; animation-delay: -0.7s; animation-direction: normal;">path,ellipse,circle,rect,polygon,polyline,line { stroke-width: 0; }@keyframes ld-heartbeat {
+  0% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  5% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  39% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  45% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  60% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes ld-heartbeat {
+  0% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  5% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  39% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  45% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  60% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.ld.ld-heartbeat {
+  -webkit-animation: ld-heartbeat 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: ld-heartbeat 0.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+</style></svg></svg>

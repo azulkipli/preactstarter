@@ -63,7 +63,7 @@ export default class Home extends Component {
               <div class="row">
                 <div class="col-sm-4">
                   <div class="col-product">
-                    <a href="transaksi-isi-pulsa.html">
+                    <a href="#">
                       <div class="product-middle">
                         <img src="assets/img/phone.png" width="24" alt="product pulsa" />
                         <span>Isi Pulsa</span>

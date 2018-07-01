@@ -4,11 +4,9 @@ import Head from "preact-head";
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 
 // import Header from './header';
-// import Home from '../routes/home';
-// import Profile from '../routes/profile';
-import Home from "async!../routes/home";
-import Login from "async!../routes/login";
-import Profile from "async!../routes/profile";
+import Home from "../routes/home";
+import Login from "../routes/login";
+import { setTimeout } from "timers";
 
 export default class App extends Component {
   /** Gets fired when the route changes.
@@ -37,10 +35,14 @@ export default class App extends Component {
     this.setState({ isAuthenticated: !this.state.isAuthenticated });
   };
   componentDidMount = () => {
-    const elem = document.getElementById("app_preload");
+    const elem = document.getElementById("preloader");
+
     window.onload = () => {
       if (elem) {
-        elem.remove();
+        // elem.remove();
+        setTimeout(() => {
+          elem.remove();
+        }, 500);
       }
     };
   };
@@ -61,7 +63,6 @@ export default class App extends Component {
             ) : (
               <Login path="/" {...state} authenticate={this.authenticate} />
             )}
-            <Profile path="/profile/:user" />
             <Error type="404" default />
           </Router>
         </div>

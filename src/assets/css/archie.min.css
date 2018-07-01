@@ -357,10 +357,12 @@
 }
 /*config background color*/
 #root,
+#preloader,
 #app {
   width: 100%;
 }
 #root,
+#preloader,
 #app,
 .app-container,
 .page {
@@ -397,6 +399,7 @@ a:active {
   max-width: 480px;
   margin: 0 auto;
   height: 100vh;
+  overflow-y: hidden;
   background: #f3f3f3;
   -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);

@@ -27,6 +27,50 @@
         <meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
     <% } %>
 
+    
+    <style>
+        .homepage-preloader {
+            position: relative;
+            margin: -1rem;
+            height: 106vh;
+            overflow-y: hidden;
+            background: #f3f3f3;
+            -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
+            -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
+        }
+        .homepage-preloader.splash {
+            background: #2d92d9;
+        }
+        .homepage-preloader.splash img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+    <link rel="preload" href="/assets/css/mini-default.min.css" as="style" onload="this.rel='stylesheet'" media="(min-width: 20em)">
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="app-container">
+            <div class="page">
+                <div class="homepage-preloader splash">
+                    <div class="container">
+                        <img src="assets/loading_2.svg" alt="loading...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+
     <% for (var chunk of webpack.chunks) { %>
         <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
            <% for (var file of chunk.files) { %>
@@ -37,14 +81,6 @@
                <% } %>
         <% } %>
     <% } %>
-       
-    <link rel="preload" href="/assets/css/mini-default.min.css" as="style" onload="this.rel='stylesheet'" media="(min-width: 20em)">
-</head>
-
-<body>
-    <noscript>
-        You need to enable JavaScript to run this app.
-    </noscript>
 
     <%= htmlWebpackPlugin.options.ssr({
 			url: '/'

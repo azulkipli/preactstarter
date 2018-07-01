@@ -29,56 +29,15 @@
 
     <% for (var chunk of webpack.chunks) { %>
         <% if (chunk.names.length === 1 && chunk.names[0] === 'polyfills') continue; %>
-            <% for (var file of chunk.files) { %>
-                <% if (htmlWebpackPlugin.options.preload && file.match(/\.(js)$/)) { %>
-                    <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
-                <% } else if (file.match(/\.(css)$/)) { %>
-                    <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="style" media="(min-width: 20em)">
-                <% } else if (file.match(/manifest\.json$/)) { %>
-                <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
-            <% } %>
+           <% for (var file of chunk.files) { %>
+               <% if (htmlWebpackPlugin.options.preload && file.match(/\.(js|css)$/)) { %>
+                   <link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+               <% } else if (file.match(/manifest\.json$/)) { %>
+                   <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>">
+               <% } %>
         <% } %>
     <% } %>
-    <style type="text/css">
-        html,
-        body {
-        height: 100%;
-        font-size: 14px;
-        font-family: 'Roboto', sans-serif;
-        /* anti aliasing jika diperlukan */
-
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-        margin:0;
-        }
-        #app_preload {
-            width: 100%;
-            height: 100%;
-        }
-        .homepage-archie {
-            position: relative;
-            max-width: 480px;
-            margin: 0 auto;
-            height: 100vh;
-            background: #f3f3f3;
-            -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
-            -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
-            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.45);
-          }
-          .homepage-archie.splash {
-            background: #2d92d9;
-          }
-          .homepage-archie.splash img {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-          }
-    </style>
+       
     <link rel="preload" href="/assets/css/mini-default.min.css" as="style" onload="this.rel='stylesheet'" media="(min-width: 20em)">
 </head>
 
@@ -96,18 +55,6 @@
                 '<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')
         </script>
 
-        <div id="app_preload">
-            <div class="app-container">
-                <div class="page">
-                    <div class="homepage-archie splash">
-                        <div class="container">
-                            <!-- <img src="assets/img/img_splash.png" alt="Welcome to archie mobile site"> -->
-                            <img src="assets/loading_2.svg" alt="Welcome to archie mobile site">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 </body>
 
 </html>

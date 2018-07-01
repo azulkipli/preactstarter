@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://preactstarter.firebaseapp.com/sitemap.txt

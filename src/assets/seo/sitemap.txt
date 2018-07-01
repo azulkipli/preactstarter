@@ -1,0 +1,4 @@
+https://preactstarter.firebaseapp.com/
+https://preactstarter.firebaseapp.com/login
+https://preactstarter.firebaseapp.com/home
+https://preactstarter.firebaseapp.com/about
